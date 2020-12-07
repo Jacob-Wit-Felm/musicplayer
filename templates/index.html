@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script type="text/javascript" src="{{ url_for('static', filename='script.js') }}"></script>
+	<title>Document</title>
+
+</head>
+<body>
+	<form action="/play/" method="post">
+		<button name="pause-playBTN" type="submit">Play</button>
+	</form>
+
+	<form action="/stop/" method="post">
+		<button name="pause-playBTN" type="submit">Stop</button>
+	</form>	
+
+	<form action="/track/next/" method="post">
+		<button name="pause-playBTN" type="submit">Next</button>
+	</form>	
+
+	<form action="/track/previous/" method="post">
+		<button name="pause-playBTN" type="submit">Previous</button>
+	</form>	
+
+	<form action="/track/previous/" method="post">
+		<button name="pause-playBTN" type="submit">Previous</button>
+	</form>	
+
+	<div class="slidecontainer" id="slide_container_f">
+		<span id="volume_span">{{current_volume_value}}</span>
+		<form method="POST" action="/track/volume/">
+			<input type="range" min={{min}} max={{max}} value={{max}} class="slider" id="volumeRange" name="volume">
+			<input type="submit" value="Submit">
+		</form>
+	</div>
+	{{forward_message}}
+</body>
+</html>
